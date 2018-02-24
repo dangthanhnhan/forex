@@ -44,7 +44,7 @@ app.use(authenticationMiddleware(app));
 app.use(responseMiddleware(app));
 
 // Add router
-let routes = require('./routes')(app);
+var routes = require('./routes')(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
