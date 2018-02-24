@@ -1,0 +1,29 @@
+{
+  "name": "forex",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.15.5",
+    "express-fileupload": "^0.4.0",
+    "express-session": "^1.15.6",
+    "feed-read-parser": "^1.0.7",
+    "in_array": "^1.1.0",
+    "morgan": "~1.9.0",
+    "mysql2": "^1.5.1",
+    "nodemailer": "^4.4.2",
+    "rss-parser": "^3.1.1",
+    "sequelize": "^4.32.1",
+    "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}

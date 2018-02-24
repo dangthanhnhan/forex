@@ -1,0 +1,75 @@
+<div class="m-wrapper">
+    <div class="row">
+        <div class="col-xl-12 col-md-12">
+            <div class="banner-header-top">
+                <a href="javascript:void(0)"><img src="<%= assetsUrl %>images/banner_header_top.png" /></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-8 col-md-8">
+            <div class="box-news-top" id="box-news-top" data-rss="<%= rssMain.link %>" data-container="rssmain" data-name="rssmain">
+                <h3 class="bnt-title"><%= rssMain.name %></h3>
+                <div id="rssmain" class="m--min-height-445"></div>
+            </div>
+
+            <div class="m-divider"></div>
+
+            <div class="box-news-with-tabs">
+                <h3 class="m--margin-bottom-16">Tin mới nhất</h3>
+                <ul class="nav nav-tabs  m-tabs-line m-tabs-line--2x" role="tablist" data-name="rsstab">
+                    <% if (typeof rssSources !== 'undefined' && rssSources.length > 0) {%>
+                        <% rssSources.forEach(function(source, index) { %>
+                        <li class="nav-item m-tabs__item">
+                            <a href="#m_tabs_<%= index %>" data-link="<%= source.link %>" data-toggle="tab" role="tab" class="nav-link m-tabs__link <% if (index == 0) {%> active <%}%>"><%= source.name %></a>
+                        </li>
+                        <% }); %>
+                    <% } %>
+                </ul>
+                <div class="tab-content">
+                    <% if (typeof rssSources !== 'undefined' && rssSources.length > 0) {%>
+                        <% rssSources.forEach(function(source, index) { %>
+                        <div class="tab-pane <% if (index == 0) {%> active <%}%>" id="m_tabs_<%= index %>" role="tabpanel">
+                            <div class="newslist <% if (index == 0) {%> m-loader m-loader--info m-loader--lg <%}%>"></div>
+                        </div>
+                        <% }); %>
+                    <% } %>
+                </div>
+            </div>
+            <!-- box news with tabs -->
+        </div>
+        <div class="col-xl-4 col-md-4 rightsidebar">
+            <button type="button" class="btn btn-info m-btn m-btn--custom btn-block m-btn--bolder m-btn--uppercase m--margin-bottom-32">TẠO TÀI KHOẢN GIAO DỊCH NGAY</button>
+
+            <div class="banner-sidebar m--margin-bottom-32">
+                <a href="javascript:void(0)">
+                    <img src="<%= assetsUrl %>images/banner_sidebar.png" />
+                </a>
+            </div>
+
+            <div class="box-news-with-tabs">
+                <h3 class="m--margin-bottom-16">Tin nổi bật</h3>
+                <ul class="nav nav-tabs  m-tabs-line m-tabs-line--2x" role="tablist" data-name="rsstab2">
+                    <% if (typeof rssFeatureSources !== 'undefined' && rssFeatureSources.length > 0) {%>
+                        <% rssFeatureSources.forEach(function(source, index) { %>
+                        <li class="nav-item m-tabs__item">
+                            <a href="#m_feature_tabs_<%= index %>" data-link="<%= source.link %>" data-toggle="tab" role="tab" class="nav-link m-tabs__link <% if (index == 0) {%> active <%}%>"><%= source.name %></a>
+                        </li>
+                        <% }); %>
+                    <% } %>
+                </ul>
+                <div class="tab-content">
+                    <% if (typeof rssFeatureSources !== 'undefined' && rssFeatureSources.length > 0) {%>
+                        <% rssFeatureSources.forEach(function(source, index) { %>
+                        <div class="tab-pane <% if (index == 0) {%> active <%}%>" id="m_feature_tabs_<%= index %>" role="tabpanel">
+                            <div class="newslist <% if (index == 0) {%> m-loader m-loader--info m-loader--lg <%}%>"></div>
+                        </div>
+                        <% }); %>
+                    <% } %>
+                </div>
+            </div>
+            <!-- box news with tabs -->
+        </div>
+    </div>
+</div>

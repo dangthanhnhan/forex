@@ -1,0 +1,67 @@
+body {font-family: Roboto, Arial;}
+.m-body .m-wrapper, .m-wrapper {width: 1170px;margin: 0 auto;}
+.m-header--fixed.m-header--minimize-off .m-header {height: 130px;}
+.m-header--fixed.m-header--minimize-off .m-header .m-header__top {height: 50px;}
+.header-hotline {color:#FFF;text-transform:uppercase;vertical-align: middle}
+.m-topbar .m-topbar__nav.m-nav > .m-nav__item > .m-nav__link {color: #FFF;text-transform: uppercase;line-height: 50px;padding: 0 10px;}
+.m-topbar .m-topbar__nav.m-nav > .m-nav__item > .m-nav__link:hover {background: #1976D2}
+.m-header .m-header__bottom {height: 80px;background: #FFF}
+.m-header-menu .m-menu__nav > .m-menu__item > .m-menu__link {border-bottom: 3px solid transparent}
+.m-header-menu .m-menu__nav > .m-menu__item > .m-menu__link .m-menu__link-text {color:#000;text-transform: uppercase;}
+.m-header-menu .m-menu__nav > .m-menu__item:hover > .m-menu__link, .m-header-menu .m-menu__nav > .m-menu__item.m-menu__item--active > .m-menu__link {border-bottom: 3px solid #2196F3}
+.m-header-menu .m-menu__nav > .m-menu__item:hover > .m-menu__link .m-menu__link-text, .m-header-menu .m-menu__nav > .m-menu__item.m-menu__item--active > .m-menu__link .m-menu__link-text {color:#2196F3;}
+.m-dropdown.m-dropdown--open .m-dropdown__wrapper, .m-dropdown.m-dropdown--hoverable:hover .m-dropdown__wrapper {display: block;-webkit-animation: m-dropdown-fade-in .3s ease 1, m-dropdown-move-up .3s ease-out 1;-moz-animation: m-dropdown-fade-in .3s ease 1, m-dropdown-move-up .3s ease-out 1;-ms-animation: m-dropdown-fade-in .3s ease 1, m-dropdown-move-up .3s ease-out 1;-o-animation: m-dropdown-fade-in .3s ease 1, m-dropdown-move-up .3s ease-out 1;animation: m-dropdown-fade-in .3s ease 1, m-dropdown-move-up .3s ease-out 1;}
+
+.meta {color:#757575;}
+.box-img {position: relative;}
+.box-img img {position: absolute;top:0;right:0;bottom:0;left:0;margin:auto;}
+.m-divider {width:100%;height:3px;background:#E0E0E0;margin-bottom: 32px;}
+.m--margin-bottom-64 {margin-bottom: 64px;}
+.m--margin-bottom-32 {margin-bottom: 32px;}
+.m--margin-bottom-16 {margin-bottom: 16px;}
+.m--margin-right-16 {margin-right: 16px;}
+.m--min-height-445 {min-height: 445px;}
+
+.banner-header-top {margin-bottom: 15px;}
+.banner-header-top img {width: 100%;}
+.box-news-top {margin-bottom: 32px;}
+.box-news-top .bnt-title {font-size: 22px;color:#000000;padding: 0 0 8px 0;margin-bottom: 16px;border-bottom: 1px solid #E0E0E0;}
+.bnt-large {margin-bottom: 16px;}
+.bnt-large .bnt-large-image {width: 300px;height: 200px;overflow: hidden;float: left;margin-right: 16px;}
+.bnt-large .bnt-large-image img {min-width: 100%;min-height: 100%;}
+.bnt-large h3 {margin-bottom: 8px;}
+.bnt-large h3 a {font-size: 20px;color: #0D47A1;font-weight: bold;}
+.bnt-large p {margin-bottom: 8px;}
+
+.bnt-items .m-stack__item {padding: 0 8px;}
+.bnt-items .m-stack__item:first-child {padding-left: 0}
+.bnt-items .m-stack__item:last-child {padding-right: 0}
+.bnt-items .bnti-image {width: 100%;height: 120px;overflow: hidden;margin-bottom: 8px;}
+.bnt-items .bnti-image img {min-width: 100%;min-height: 100%;}
+.bnt-items h3, .bnt-items p {margin-bottom: 8px;}
+.bnt-items h3 a {font-size: 14px;color: #0D47A1;font-weight: bold;}
+
+.box-news-with-tabs {}
+.box-news-with-tabs h3 {font-weight: bold;font-size: 22px;color: #000;}
+
+.newslist {min-height: 300px;}
+.newslist .newsitem {padding: 17px 0;border-bottom: 1px solid #E0E0E0}
+.newslist .newsitem:first-child {padding-top:0;}
+.newslist .newsitem .ni-images {width: 90px;height:60px;float:left;}
+.newslist .newsitem .ni-images.ni-images-x2 {width: 150px;height:100px;}
+.newslist .newsitem h3 {font-size: 14px;color:#0D47A1;margin-bottom: 4px;}
+.newslist .newsitem .meta {font-size: 13px;margin-bottom: 4px;}
+
+#ib-register-page {height: 100vh;overflow: hidden;}
+#ib-register-page .m-stack__item {height: 100vh;overflow: hidden;}
+#ib-register-page .m-portlet {height: 100vh;}
+#ib-register-page .logo {margin-bottom: 32px}
+#ibregisterFormBox {width: 50%;}
+#ibregisterFormBox .m-form.m-form--fit .m-form__content, #ibregisterFormBox .m-form.m-form--fit .m-form__heading, #ibregisterFormBox .m-form.m-form--fit .m-form__group {padding-left: 0;padding-right: 0;}
+.has-danger .input-group-text, .has-danger .form-control {border-color: #f4516c}
+#ibregisterrightpanel img {width: 100%;height: 100%;}
+.ib-success-page .la {font-size: 64px;}
+
+@media (min-width: 993px) {
+    
+}

@@ -1,0 +1,161 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title m-subheader__title--separator">Danh sách Introduction Broker</h3>         
+                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline" style="height:40px;">
+                    <li class="m-nav__item m-nav__item--home">
+                        <a href="<%= config.rooturl_module %>" class="m-nav__link m-nav__link--icon">
+                           <i class="m-nav__link-icon la la-home"></i>
+                        </a>
+                    </li>
+                    <li class="m-nav__separator">-</li>
+                    <li class="m-nav__item">
+                        <a href="javascript:void(0)" class="m-nav__link">
+                            <span class="m-nav__link-text">Introduction Broker</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="m-content">
+        <div class="m-portlet m-portlet--mobile">
+            <div class="m-portlet__body">
+                <!--begin: Search Form -->
+                <div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 order-2 order-xl-1" id="filtercontainer">
+                            <div class="form-group m-form__group row align-items-center">
+                                <div class="col-md-3">
+                                    <div class="m-form__group">
+                                        <div class="m-form__label">
+                                            <label>Tỉnh/Thành:</label>
+                                        </div>
+                                        <div class="m-form__control">
+                                            <select class="form-control m-select-region" name="cityId" id="m_form_cityId" data-parentid="0" data-level="1" data-placeholder="Toàn quốc">
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="d-md-none m--margin-bottom-10"></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="m-form__group">
+                                        <div class="m-form__label">
+                                            <label>Quận/Huyện:</label>
+                                        </div>
+                                        <div class="m-form__control">
+                                            <select class="form-control m-select-region" name="districtId" id="m_form_districtId" data-parentid="-1" data-level="2" data-select-depend="m_form_cityId" data-placeholder="Tất cả">
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="d-md-none m--margin-bottom-10"></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="m-form__group">
+                                        <div class="m-form__label">
+                                            <label>Phường/Xã:</label>
+                                        </div>
+                                        <div class="m-form__control">
+                                            <select class="form-control m-select-region" name="wardId" id="m_form_wardId" data-parentid="-1" data-level="3" data-select-depend="m_form_districtId" data-placeholder="Tất cả">
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="d-md-none m--margin-bottom-10"></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="m-form__group">
+                                        <div class="m-form__label">
+                                            <label class="m-label m-label--single">Từ khóa:</label>
+                                        </div>
+                                        <div class="m-form__control">
+                                            <div class="m-input-icon m-input-icon--left">
+                                                <input type="text" class="form-control m-input" placeholder="Search..." id="keyword">
+                                                <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                    <span><i class="la la-search"></i></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-md-none m--margin-bottom-10"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end: Search Form -->
+                <div class="m_datatable" id="ajax_data" data-url="<%= config.rooturl_module + '/' + controller %>/json" data-keyword="#keyword" data-filtercontainer="#filtercontainer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var columns = [
+        {
+            field: 'id',
+            title: 'ID',
+            width: 40,
+            sortable: 'desc',
+            selector: false,
+            textAlign: 'center',
+        }, {
+            field: 'fullname',
+            title: 'Tên IB',
+            filterable: false, // disable or enable filtering
+            width: 150,
+        }, {
+            field: 'address',
+            title: 'Địa chỉ',
+            width: 250,
+            template: function(row) {
+                let address = row.address;
+                if (row.Ward != null) {
+                    address += (address != '' ? ', ' : '') + row.Ward.name;
+                }
+
+                if (row.District != null) {
+                    address += (address != '' ? ', ' : '') + row.District.name;
+                }
+
+                if (row.City != null) {
+                    address += (address != '' ? ', ' : '') + row.City.name;
+                }
+
+                return address;
+            }
+        }, {
+            field: 'phone',
+            title: 'Điện thoại',
+            width: 100,
+        }, {
+            field: 'email',
+            title: 'Email',
+        }, {
+            field: 'Actions',
+            width: 60,
+            title: 'Actions',
+            sortable: false,
+            overflow: 'visible',
+            template: function (row, index, datatable) {
+                var dropup = (datatable.getPageSize() - index) <= 4 ? 'dropup' : '';
+                var editLink = config.rooturl_module + '/ib/' + row.id;
+                return '\
+                    <div class="dropdown ' + dropup + '">\
+                        <a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown">\
+                            <i class="la la-ellipsis-h"></i>\
+                        </a>\
+                        <div class="dropdown-menu dropdown-menu-right">\
+                            <a class="dropdown-item" href="' + editLink + '"><i class="la la-list-alt"></i> Cập nhật</a>\
+                        </div>\
+                    </div>\
+                ';
+            },
+        }
+    ];
+</script>

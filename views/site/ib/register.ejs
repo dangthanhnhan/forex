@@ -1,0 +1,137 @@
+<div id="ib-register-page">
+    <div class="m-stack m-stack--ver m-stack--general">
+        <div id="ibregisterFormBox" class="m-stack__item">
+            <div class="m-portlet m-portlet--tab">
+                <div class="m-portlet__body m-scrollable" data-scrollbar-shown="true" data-scrollable="true">
+                    <div class="m-section">
+                        <p class="m-section__sub text-center logo"><img src="<%= assetsUrl %>images/logo.png" width="100%" /></p>
+                        <p class="lead text-center">Sign up for free account!</p>
+                        <p class="m-section__sub m--margin-bottom-64 text-center">Marvel is free to use for as long as you want with two active projects.</p>
+
+                        <div class="m-section__content">
+                            <form class="m-form m-form--fit" id="ibregisterForm">
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-12">
+                                        <label for="fullname">Họ & tên *</label>
+                                        <input class="form-control m-input" type="text" name="fullname" placeholder="Nhập họ và tên thật của bạn" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-12">
+                                        <label for="identitycard">CMND</label>
+                                        <input class="form-control m-input" type="text" name="identitycard" placeholder="Nhập số CMND" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-6">
+                                        <label for="birthday">Ngày sinh</label>
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control inputdatepicker m-input" readonly="" name="birthday" placeholder="Chọn ngày sinh" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="gender">Giới tính</label>
+                                        <select class="form-control m-input" name="gender">
+                                            <option value="1">Nam</option>
+                                            <option value="3">Nữ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-12">
+                                        <label for="phone">Số điện thoại *</label>
+                                        <input class="form-control m-input" type="text" name="phone" placeholder="Nhập số điện thoại liên lạc của bạn" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-12">
+                                        <label for="email">Email</label>
+                                        <input class="form-control m-input" type="text" name="email" placeholder="Nhập số email liên hệ của bạn" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-12">
+                                        <label for="address">Số nhà, tên đường</label>
+                                        <input class="form-control m-input" type="text" name="address" placeholder="Nhập địa chỉ" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-6">
+                                        <label for="country">Quốc gia *</label>
+                                        <select class="form-control m-input" name="country">
+                                            <option value="0">Chọn Quốc gia</option>
+                                            <option value="1">Việt Nam</option>
+                                            <option value="2">England</option>
+                                            <option value="3">United States</option>
+                                            <option value="4">Canada</option>
+                                            <option value="5">Japan</option>
+                                            <option value="6">Korea</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="city">Tỉnh/Thành *</label>
+                                        <select class="form-control m-input m-select-region" name="cityId" id="m_form_cityId" data-parentid="0" data-level="1" data-placeholder="Chọn Tỉnh/Thành Phố">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-6">
+                                        <label for="district">Quận/Huyện *</label>
+                                        <select class="form-control m-input m-select-region" name="districtId" id="m_form_districtId" data-parentid="-1" data-level="2" data-select-depend="m_form_cityId" data-placeholder="Chọn Quận/Huyện">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="ward">Phường/Xã *</label>
+                                        <select class="form-control m-input m-select-region" name="wardId" id="m_form_wardId" data-parentid="-1" data-level="3" data-placeholder="Chọn Phường/Xã" data-select-depend="m_form_districtId">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row m--margin-bottom-32">
+                                    <div class="col-md-12">
+                                        <label for="product">Sản phẩm giao dịch</label>
+                                        <select class="form-control m-input" name="product">
+                                            <option value="0">Chọn Sản phẩm giao dịch</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-12">
+                                        <label class="m-radio m-radio--solid m-radio--info">
+                                            <input type="radio" name="isconnectallbroker" value="1"> Muốn kết nối IB với tất cả Forex Broker tại TraderViet
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-12">
+                                        <label for="note">Thông tin bổ sung</label>
+                                        <input class="form-control m-input" type="text" name="note" placeholder="Liệt kê kinh nghiệm IB, muốn đăng ký master IB không…." value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-12">
+                                        <label class="m-radio m-radio--solid m-radio--info">
+                                            <input type="radio" name="isreceivebonus" value="1"> Muốn nhận chăm sóc và bonus từ các Forex Broker
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-submit btn-info btn-block">Đăng ký trở thành Introduction Broker</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ibregisterrightpanel" class="m-stack__item m-stack__item--center m-stack__item--fluid">
+            <img src="<%= assetsUrl %>images/bg_ib.png" />
+        </div>
+    </div>
+</div>

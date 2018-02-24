@@ -1,0 +1,134 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title m-subheader__title--separator">Cập nhật IB</h3>           
+                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline" style="height:40px;">
+                    <li class="m-nav__item m-nav__item--home">
+                        <a href="<%= config.rooturl_module %>" class="m-nav__link m-nav__link--icon">
+                           <i class="m-nav__link-icon la la-home"></i>
+                        </a>
+                    </li>
+                    <li class="m-nav__separator">-</li>
+                    <li class="m-nav__item">
+                        <a href="<%= config.rooturl_module + '/' + controller %>" class="m-nav__link">
+                            <span class="m-nav__link-text">IB</span>
+                        </a>
+                    </li>
+                    <li class="m-nav__separator">-</li>
+                    <li class="m-nav__item">
+                        <a href="javascript:void(0)" class="m-nav__link">
+                            <span class="m-nav__link-text">Cập nhật</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-content">
+        <div class="m-portlet m-portlet--mobile">
+            <form id="form_common_action" class="m-form m-form--fit m-form--label-align-right" action="<%= config.rooturl_module + '/' + controller %>/<%= formData.id %>" id="userAddForm">
+                <div class="m-portlet__body">
+                    <div class="form-group m-form__group row">
+                        <div class="col-10">
+                            <h3 class="m-form__section">1. Thông tin IB</h3>
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group row">
+                        <div class="col-8 m-form__group-sub">
+                            <label for="fullname">Họ và tên</label>
+                            <input class="form-control m-input" type="text" name="fullname" value="<%= formData.fullname %>">
+                        </div>
+                        <div class="col-4 m-form__group-sub">
+                            <label for="gender">Giới tính</label>
+                            <select class="form-control m-ipnut" name="gender">
+                                <option value="1" <% if (formData.gender == 1) { %>selected<% } %>>Nam</option>
+                                <option value="3" <% if (formData.gender == 3) { %>selected<% } %>>Nữ</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group row">
+                        <div class="col-4 m-form__group-sub">
+                            <label for="identitycard">CMND</label>
+                            <input class="form-control m-input" type="text" name="identitycard" value="<%= formData.identitycard %>">
+                        </div>
+                        <div class="col-4 m-form__group-sub">
+                            <label for="birthday">Ngày sinh</label>
+                            <div class="m-input-icon m-input-icon--right date">
+                                <input type="text" class="form-control m-input inputdatepicker" name="birthday" readonly value="<%= formData.birthday %>">
+                                <div class="m-input-icon__icon m-input-icon__icon--right">
+                                    <span><i class="la la-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 m-form__group-sub">
+                            <label for="product">Sản phẩm giao dịch</label>
+                            <select class="form-control m-input" name="product">
+                                <option value="0">Chọn Sản phẩm giao dịch</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group row">
+                        <div class="col-4 m-form__group-sub">
+                            <label for="phone">Số điện thoại</label>
+                            <input class="form-control m-input" type="text" name="phone" value="<%= formData.phone %>">
+                        </div>
+                        <div class="col-4 m-form__group-sub">
+                            <label for="email">Email</label>
+                            <input class="form-control m-input" type="text" name="email" value="<%= formData.email %>">
+                        </div>
+                        <div class="col-4 m-form__group-sub">
+                            <label for="address">Số nhà, tên đường</label>
+                            <input class="form-control m-input" type="text" name="address" value="<%= formData.address %>">
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group row">
+                        <div class="col-3 m-form__group-sub">
+                            <label for="country">Quốc gia</label>
+                            <select class="form-control m-input" name="country">
+                                <option value="0" <% if (formData.country == 0) { %>selected<% } %>>Chọn Quốc gia</option>
+                                <% countries.forEach(function(country, index){ %>
+                                <option value="<%= country.id %>" <% if (formData.country == country.id) { %>selected<% } %>><%= country.name %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <div class="col-3 m-form__group-sub">
+                            <label for="cityId">Tỉnh/Thành phố</label>
+                            <select class="form-control m-select-region" name="cityId" id="m_form_cityId" data-value="<%= formData.cityId %>" data-parentid="0" data-level="1" data-placeholder="Chọn Tỉnh/Thành Phố">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="col-3 m-form__group-sub">
+                            <label for="districtId">Quận/Huyện</label>
+                            <select class="form-control m-select-region" name="districtId" id="m_form_districtId" data-value="<%= formData.districtId %>" data-parentid="<%= formData.cityId %>" data-level="2" data-placeholder="Chọn Quận/Huyện" data-select-depend="m_form_cityId">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="col-3 m-form__group-sub">
+                            <label for="wardId">Phường/Xã</label>
+                            <select class="form-control m-select-region" name="wardId" id="m_form_wardId" data-value="<%= formData.wardId %>" data-parentid="<%= formData.districtId %>" data-level="3" data-placeholder="Chọn Phường/Xã" data-select-depend="m_form_districtId">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF PORTLET BODY -->
+
+                <div class="m-portlet__foot m-portlet__foot--fit">
+                    <div class="m-form__actions">
+                        <div class="row">
+                            <div class="col-10">
+                                <button class="btn btn-accent m-btn m-btn--air m-btn--custom btn-submit">Lưu</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

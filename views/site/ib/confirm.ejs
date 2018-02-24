@@ -1,0 +1,38 @@
+<div id="ib-register-page">
+    <div class="m-stack m-stack--ver m-stack--general">
+        <div id="ibregisterFormBox" class="m-stack__item">
+            <div class="m-portlet m-portlet--tab">
+                <div class="m-portlet__body m-scrollable" data-scrollbar-shown="true" data-scrollable="true">
+                    <div class="m-section">
+                        <p class="m-section__sub text-center logo"><img src="<%= assetsUrl %>images/logo.png" width="100%" /></p>
+                        <p class="lead text-center">Register confirmation!</p>
+
+                        <% if (typeof email !== 'undefined' && email != '') { %>
+                        <p class="m-section__sub m--margin-bottom-64">Nhập mã xác nhận hoàn tất việc đăng ký. Chờ khoảng 5p nếu vẫn không được mã xác nhận, chọn <a href="javascript:void(0)" data-email="<%= email %>" class="btn-resendconfirmib">gửi lại mã xác nhận</a></p>
+
+                        <div class="m-section__content">
+                            <form class="m-form m-form--fit" id="ibconfirmationForm">
+                                <input type="hidden" name="email" value="<%= email %>" />
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-12">
+                                        <label for="activation_code">Mã xác nhận</label>
+                                        <input class="form-control m-input" type="text" name="activation_code" placeholder="Nhập mã xác nhận trong email của bạn" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-submit btn-info btn-block">Đăng ký trở thành Introduction Broker</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ibregisterrightpanel" class="m-stack__item m-stack__item--center m-stack__item--fluid">
+            <img src="<%= assetsUrl %>images/bg_ib.png" />
+        </div>
+    </div>
+</div>

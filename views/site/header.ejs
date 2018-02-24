@@ -1,0 +1,145 @@
+<html lang="en" >
+	<head>
+        <meta charset="utf-8" />
+        <title>Metronic | Dashboard</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- begin::Web font -->
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+
+            var config = <%- JSON.stringify(config) %>
+            var assetsUrl = '<%= assetsUrl %>';
+        </script>
+        <!-- end::Web font -->
+
+        <!--begin::Base Styles -->  
+
+                 
+        <!--begin::Page Vendors --> 
+        <% if (typeof css !== 'undefined' && css.length > 0) {%>
+            <% css.forEach(function(file) { %>
+            <link href="/assets/<%= module %>/<%= file %>" rel="stylesheet" type="text/css" />
+            <% }); %>
+        <% } %>
+        <!--end::Page Vendors -->
+ 
+        <link href="/assets/<%= module %>/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/<%= module %>/css/style.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/<%= module %>/css/style.css" rel="stylesheet" type="text/css" />
+        <!--end::Base Styles -->
+    </head>
+    <body class="m-page--wide m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default m-header--minimize-off">
+        <% if (includeHeader) { %>
+        <div class="m-grid m-grid--hor m-grid--root m-page">
+            <header class="m-grid__item     m-header " data-minimize="minimize" data-minimize-offset="200" data-minimize-mobile-offset="200">
+                <div class="m--height-50 m-header__top">
+                    <div class="m-wrapper">
+                        <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+                            <div class="m-stack m-stack--ver m-stack--desktop">
+                                <div class="m-stack__item">
+                                    <div class="m-stack m-stack--ver m-stack--general m-stack--inline">
+                                        <div class="m-stack__item m-stack__item--middle header-hotline">
+                                            Hotline: <strong>01222024646</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-stack__item">
+                                    <div class="m-topbar  m-stack m-stack--ver m-stack--general">
+                                        <div class="m-stack__item m-topbar__nav-wrapper">
+                                            <ul class="m-topbar__nav m-nav m-nav--inline">
+                                                <li class="m-nav__item"><a href="javascript:void(0)" class="m-nav__link">Đăng nhập</a></li>
+                                                <li class="m-nav__item"><a href="javascript:void(0)" class="m-nav__link">Đăng ký</a></li>
+                                                <li class="m-nav__item"><a href="javascript:void(0)" class="m-nav__link">Get help</a></li>
+                                                <li class="m-nav__item"><a href="javascript:void(0)" class="m-nav__link">Tiếng việt</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- header top -->
+                <div class="m-header__bottom">
+                    <div class="m-wrapper">
+                        <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+                            <div class="m-stack m-stack--ver m-stack--desktop">
+                                <div class="m-stack__item m-stack__item--middle">
+                                    <a href="/">
+                                        <img src="<%= assetsUrl %>images/logo.png" height="52" />
+                                    </a>
+                                </div>
+                                <div class="m-stack__item">
+                                    <div class="m-topbar  m-stack m-stack--ver m-stack--general">
+                                        <button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-light " id="m_aside_header_menu_mobile_close_btn">
+                                            <i class="la la-close"></i>
+                                        </button>
+                                        <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ">
+                                            <ul class="m-menu__nav ">
+                                                <li class="m-menu__item  m-menu__item--active ">
+                                                    <a class="m-menu__link ">
+                                                        <span class="m-menu__link-text">Trang chủ</span>
+                                                    </a>
+                                                </li>
+                                                <li class="m-menu__item ">
+                                                    <a class="m-menu__link ">
+                                                        <span class="m-menu__link-text">Brokers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="m-menu__item ">
+                                                    <a class="m-menu__link ">
+                                                        <span class="m-menu__link-text">Cửa hàng</span>
+                                                    </a>
+                                                </li>
+                                                <li class="m-menu__item ">
+                                                    <a class="m-menu__link ">
+                                                        <span class="m-menu__link-text">Liên hệ</span>
+                                                    </a>
+                                                </li>
+                                                <li class="m-menu__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light m-list-search m-list-search--skin-light" data-menu-submenu-toggle="click" aria-haspopup="true">
+                                                    <a href="#" class="m-menu__link m-menu__toggle">
+                                                        <i class="m-menu__link-icon la la-search"></i>
+                                                    </a>
+                                                    <div class="m-dropdown__wrapper m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
+                                                        <span class="m-dropdown__arrow m-dropdown__arrow--right"></span>
+                                                        <div class="m-dropdown__inner ">
+                                                            <div class="m-dropdown__header">
+                                                                <form  class="m-list-search__form">
+                                                                    <div class="m-list-search__form-wrapper">
+                                                                        <span class="m-list-search__form-input-wrapper">
+                                                                            <input id="m_quicksearch_input" autocomplete="off" type="text" name="q" class="m-list-search__form-input" value="" placeholder="Search...">
+                                                                        </span>
+                                                                    </div>
+                                                                </form>  
+                                                            </div>
+                                                            <div class="m-dropdown__body">
+                                                                <div class="m-dropdown__scrollable m-scrollable" data-max-height="300" data-mobile-max-height="200">
+                                                                    <div class="m-dropdown__content">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- header bottom -->
+            </header>
+
+            <div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop    m-container m-container--responsive m-container--xxl m-page__container m-body">
+        <% } %>
