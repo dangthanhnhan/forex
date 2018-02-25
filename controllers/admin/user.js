@@ -1,8 +1,8 @@
 'use strict';
-
-const Helper = require('../../libs/helper');
-
 module.exports = function(app){
+    const Helper = require('../../libs/helper');
+    const VieHashing = require('../../libs/viehashing');
+
     return {
         list: function(req, res, next) {
             const content = res.getContent(req.controller + '/index', {});
@@ -108,7 +108,7 @@ module.exports = function(app){
                 where: {email: requestData.account},
             });
 
-            if (myUser != null && myUser.id > 0) {
+            if (myUser != null && myUser.id > 0 && myUser.password == VieHashing.hash(requestData.password)) {
                 status = 1;
                 session.uid = myUser.id;
             }

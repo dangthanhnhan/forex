@@ -43,6 +43,10 @@ module.exports = function(sequelize, app) {
             type: Sequelize.DATE,
             defaultValue: '',
         },
+        password: {
+            type: Sequelize.STRING,
+            defaultValue: '',
+        },
         activationcode: {
             type: Sequelize.STRING(32),
             defaultValue: '',
