@@ -3,29 +3,29 @@ module.exports = function(app){
     return {
         index: function(req, res, next) {
             const rssMain = {
-                name: 'Tài chính',
-                link: 'https://vnexpress.net/rss/kinh-doanh.rss'
+                name: 'Forex - Commodities',
+                link: 'https://traderviet.com/forums/thi-truong-forex-commodities.9/index.rss'
             };
             const rssSources = [
                 {
-                    name: 'Thể thao',
-                    link: 'http://www.24h.com.vn/upload/rss/thethao.rss',
+                    name: 'Kinh tế - tài chính',
+                    link: 'https://traderviet.com/forums/kien-thuc-kinh-te-tai-chinh.74/index.rss',
                 },
                 {
-                    name: 'Khoa học',
-                    link: 'https://vnexpress.net/rss/khoa-hoc.rss',
+                    name: 'Price Action',
+                    link: 'https://traderviet.com/forums/lop-hoc-price-action.6/index.rss',
                 },
                 {
-                    name: 'Du lịch',
-                    link: 'https://vnexpress.net/rss/du-lich.rss',
+                    name: 'Binary Options',
+                    link: 'https://traderviet.com/forums/quyen-chon-nhi-phan-binary-options.66/index.rss',
                 },
                 {
                     name: 'Forex',
                     link: 'https://traderviet.com/forums/thi-truong-forex-commodities.9/index.rss',
                 },
                 {
-                    name: 'Cười',
-                    link: 'https://vnexpress.net/rss/cuoi.rss',
+                    name: 'Crypto Currency',
+                    link: 'https://traderviet.com/forums/thi-truong-tien-dien-tu-crypto-currency.54/index.rss',
                 },
             ];
 
