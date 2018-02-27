@@ -93,12 +93,12 @@ module.exports = function(sequelize, app) {
             defaultValue: 0,
         },
         datecreated: {
-            type: Sequelize.INTEGER(10),
+            type: Sequelize.DATE,
             defaultValue: Math.round(+new Date()/1000),
         },
         datemodified: {
-            type: Sequelize.INTEGER(10),
-            defaultValue: 0,
+            type: Sequelize.DATE,
+            defaultValue: '0000-00-00',
         },
     }, {
         tableName: tableName,
