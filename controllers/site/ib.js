@@ -30,9 +30,7 @@ module.exports = function(app){
                 const code = Helper.random(100000, 999999);
                 requestData.activationcode = code;
 
-                if (requestData.birthday == '') {
-                    requestData.birthday = '0000-00-00 00:00:00';
-                } else {
+                if (requestData.birthday != '') {
                     let birthdayParts = requestData.birthday.split('/');
                     requestData.birthday = birthdayParts[2] + '-' + birthdayParts[1] + '-' + birthdayParts[0];
                 }
