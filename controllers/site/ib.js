@@ -36,6 +36,9 @@ module.exports = function(app){
                     let birthdayParts = requestData.birthday.split('/');
                     requestData.birthday = birthdayParts[2] + '-' + birthdayParts[1] + '-' + birthdayParts[0];
                 }
+                requestData.status = IntroductionBrokerModel.STATUS_UNACTIVE;
+                console.log(requestData);
+
                 var result = await IntroductionBrokerModel.save(requestData);
                 if (result) {
                     status = 1;
