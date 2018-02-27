@@ -204,6 +204,13 @@ module.exports = function(sequelize, app) {
     };
 
     IntroductionBroker.save = async function(formData) {
+        formData.cityId = parseInt(formData.cityId);
+        formData.districtId = parseInt(formData.districtId);
+        formData.wardId = parseInt(formData.wardId);
+        formData.product = parseInt(formData.product);
+        formData.isconnectallbroker = parseInt(formData.isconnectallbroker);
+        formData.isreceivebonus = parseInt(formData.isreceivebonus);
+        
         let myObject = IntroductionBroker.build(formData);
         [err, myInstance] = await Helper.to(myObject.save());
         if (err) {return false};
