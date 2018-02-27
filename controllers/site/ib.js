@@ -31,7 +31,7 @@ module.exports = function(app){
                 requestData.activationcode = code;
 
                 if (requestData.birthday == '') {
-                    requestData.birthday = '0000-00-00';
+                    requestData.birthday = '0000-00-00 00:00:00';
                 } else {
                     let birthdayParts = requestData.birthday.split('/');
                     requestData.birthday = birthdayParts[2] + '-' + birthdayParts[1] + '-' + birthdayParts[0];
