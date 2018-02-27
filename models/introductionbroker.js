@@ -22,7 +22,7 @@ module.exports = function(sequelize, app) {
         },
         birthday: {
             type: Sequelize.DATEONLY,
-            defaultValue: '0000-00-00',
+            defaultValue: new Date(0,0,0),
         },
         gender: {
             type: Sequelize.SMALLINT(1),
