@@ -204,13 +204,13 @@ module.exports = function(sequelize, app) {
     };
 
     IntroductionBroker.save = async function(formData) {
-        formData.cityId = parseInt(formData.cityId);
-        formData.districtId = parseInt(formData.districtId);
-        formData.wardId = parseInt(formData.wardId);
-        formData.product = parseInt(formData.product);
-        formData.isconnectallbroker = parseInt(formData.isconnectallbroker);
-        formData.isreceivebonus = parseInt(formData.isreceivebonus);
-        
+        formData.cityId = parseInt(formData.cityId) || 0;
+        formData.districtId = parseInt(formData.districtId) || 0;
+        formData.wardId = parseInt(formData.wardId) || 0;
+        formData.product = parseInt(formData.product) || 0;
+        formData.isconnectallbroker = parseInt(formData.isconnectallbroker) || 0;
+        formData.isreceivebonus = parseInt(formData.isreceivebonus) || 0;
+
         let myObject = IntroductionBroker.build(formData);
         [err, myInstance] = await Helper.to(myObject.save());
         if (err) {return false};
