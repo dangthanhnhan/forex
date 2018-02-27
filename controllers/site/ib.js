@@ -29,6 +29,13 @@ module.exports = function(app){
             if (error.length == 0) {
                 const code = Helper.random(100000, 999999);
                 requestData.activationcode = code;
+
+                if (requestData.birthday == '') {
+                    requestData.birthday = '0000-00-00';
+                } else {
+                    let birthdayParts = requestData.birthday.split('-');
+                    requestData.birthday = birthdayParts[2] + '-' + birthdayParts[1] + '-' + birthdayParts[0];
+                }
                 var result = await IntroductionBrokerModel.save(requestData);
                 if (result) {
                     status = 1;
