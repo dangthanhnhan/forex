@@ -33,6 +33,8 @@ module.exports = function(app){
                 if (requestData.birthday != '') {
                     let birthdayParts = requestData.birthday.split('/');
                     requestData.birthday = birthdayParts[2] + '-' + birthdayParts[1] + '-' + birthdayParts[0];
+                } else {
+                    requestData.birthday = new Date(0,0,0);
                 }
                 requestData.status = IntroductionBrokerModel.STATUS_UNACTIVE;
                 console.log(requestData);
