@@ -32,9 +32,9 @@ module.exports = function(app){
 
                 if (requestData.birthday != '') {
                     let birthdayParts = requestData.birthday.split('/');
-                    requestData.birthday = new Date(birthdayParts[2], birthdayParts[1], birthdayParts[0]);
+                    requestData.birthday = new Date(birthdayParts[2], birthdayParts[1] - 1, birthdayParts[0]);
                 } else {
-                    requestData.birthday = new Date(1970,0,0);
+                    requestData.birthday = new Date(1970,0,1);
                 }
                 requestData.status = IntroductionBrokerModel.STATUS_UNACTIVE;
                 console.log(requestData);
